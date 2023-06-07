@@ -1,0 +1,20 @@
+<h3>Upload PDF File</h3>
+
+<form method="POST" enctype="multipart/form-data" action="/uploadFile">
+  <table class="table">
+    <tr>
+      <th>Select File</th>
+      <td>
+        <input type="file" name="file" />
+      </td>
+      <td>
+        <button type="submit" class="btn btn-success">Upload File</button>
+      </td>
+    </tr>
+  </table>
+</form>
+<% if (status === 'fail') { %>
+<div class="alert alert-danger" role="alert"><%= message %></div>
+<% } %> <% if (status === 'success') { %>
+<div class="alert alert-success" role="success"><%= message %></div>
+<% } %>

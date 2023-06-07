@@ -37,6 +37,66 @@
             </a>
           </li>
         </ul>
+        <% if (!user) { %>
+        <div class="d-flex gap-3 align-items-center">
+          <a href="/auth/google" class="login100-social-item px-1">
+            <img
+              src="images/google.png"
+              alt="GOOGLE"
+              width="30px"
+              height="30px"
+            />
+          </a>
+          <a href="/auth/google" class="login100-social-item px-1">
+            <img
+              src="images/facebook.png"
+              alt="facebook"
+              width="30px"
+              height="30px"
+            />
+          </a>
+        </div>
+        <% } else { %>
+        <div class="dropdown">
+          <a
+            href="#"
+            id="navbarDropdownMenuLink"
+            role="button"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+            <img
+              src="<%= user?.picture %>"
+              width="32px"
+              height="32px"
+              class="rounded-circle"
+            />
+          </a>
+          <div
+            class="dropdown-menu dropdown-menu-right"
+            aria-labelledby="navbarDropdownMenuLink"
+          >
+            <a class="dropdown-item" href="/">Dashboard</a>
+            <a class="dropdown-item" href="/profile">Profile</a>
+            <div class="dropdown-divider"></div>
+
+            <div class="px-3">
+              <form action="/logout" method="POST">
+                <button type="submit" class="btn btn-danger btn-sm w-100">
+                  Logout
+                </button>
+              </form>
+            </div>
+
+            <!-- <form id="myform" method="post" action="logout">
+              <a onclick="document.getElementById('myform').submit();"
+                >Submit to action</a
+              >
+            </form> -->
+          </div>
+        </div>
+        <% } %>
       </div>
     </nav>
     <div class="container h-100 py-4"><%- body %></div>

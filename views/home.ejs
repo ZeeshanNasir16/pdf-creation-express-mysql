@@ -1,2 +1,23 @@
 <h3>Generate PDF Document With Node JS</h3>
+<% if (error) { %>
+<div class="alert alert-danger" role="alert"><%= error %></div>
+<% } %>
+<!-- <% if (error) { %>
+<div class="alert alert-danger" role="alert"><%= error %></div>
+<% } %>
+<form action="/downloadFile" method="POST">
+  <div class="d-flex align-items-end my-3" style="gap: 1rem">
+    <div class="form-group mb-0">
+      <label for="pdfFileName">File name</label>
+      <input
+        type="text"
+        id="pdfFileName"
+        name="fileName"
+        class="form-control"
+        required
+      />
+    </div>
+    <button type="submit" class="btn btn-success">Generate PDF</button>
+  </div>
+</form> -->
 <a href="/download" class="btn btn-success">Generate Pdf</a>
